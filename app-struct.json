@@ -1,0 +1,29 @@
+{
+    "root":{ 
+      "type":"linktree",
+      "framework":"w3css",
+      "appName":"utmApp",
+      "backgroundColour":"teal",
+      "links":[
+          {"caption":"Home Login","type":"login"},
+          {"caption":"About","type":"tabular","links":[
+            {"caption":"About Faculty"}
+          ]},
+          {"caption":"Photos","type":"list-paginate"},
+          {"caption":"Contact","type":"linktree","links":[
+            {"caption":"Family","type":"login"},
+            {"caption":"Friends","type":"login"}
+          ]},
+          {"caption":"Info","type":"tabular", "links":[
+            {"caption":"News","icon":"fa-solid fa-font-awesome"},
+            {"caption":"Fees","icon":"fas fa-money-check"},
+            {"caption":"Survey","icon":"fas fa-poll","type":"tabular","links":[
+              {"caption":"Campus Live","icon":"fa-solid fa-school"},
+              {"caption":"Cafeteria","icon":"fa-solid fa-coffee"},
+              {"caption":"Teaching and Learning", "icon":"fas fa-chalkboard-teacher"}
+            ]}
+          ]}
+        ]
+      
+    }
+  }

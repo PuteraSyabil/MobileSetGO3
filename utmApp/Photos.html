@@ -1,0 +1,92 @@
+<head>
+    <title>main page</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="link.js"></script>
+    <script src="https://kit.fontawesome.com/e67e81f5eb.js" crossorigin="anonymous"></script>
+
+    
+  </head>
+
+  <body style="min-height: 100vh;display: flex;flex-direction: column; background-position: center; font-family: 'Lato';">
+  
+    <div class="w3-teal" id="spanItem">
+      <a href="javascript:history.back()" class="w3-bar-item w3-button" id="linkElement"><i class="material-icons">arrow_back</i></a>
+    </div></body>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="list-paginate-obj.js"></script>
+
+<script>
+   
+    var current_page = 1;
+    var obj_per_page = 3;
+    function totNumPages()
+    {
+        return Math.ceil(obj.length / obj_per_page);
+    }
+    
+    function prevPage()
+    {
+        if (current_page > 1) {
+            current_page--;
+            change(current_page);
+        }
+    }
+    function nextPage()
+    {
+        if (current_page < totNumPages()) {
+            current_page++;
+            change(current_page);
+        }
+    }
+    function change(page)
+    {
+        var btn_next = document.getElementById("btn_next");
+        var btn_prev = document.getElementById("btn_prev");
+        var listing_table = document.getElementById("TableList");
+        var page_span = document.getElementById("page");
+        if (page < 1) page = 1;
+        if (page > totNumPages()) page = totNumPages();
+        listing_table.innerHTML = "";
+        for (var i = (page-1) * obj_per_page; i < (page * obj_per_page); i++) {
+            listing_table.innerHTML += '<li><span class="w3-large">'+obj[i].listCaption +'</span>'+ '<br><span>'+obj[i].listDescription+'</span></li>\n';
+        }
+        page_span.innerHTML = page;
+        if (page == 1) {
+            btn_prev.style.visibility = "hidden";
+        } else {
+            btn_prev.style.visibility = "visible";
+        }
+        if (page == totNumPages()) {
+            btn_next.style.visibility = "hidden";
+        } else {
+            btn_next.style.visibility = "visible";
+        }
+    }
+    window.onload = function() {
+        change(1);
+    };
+    
+</script>
+
+
+<ul id="TableList" class="w3-ul"></ul>
+
+<div class="w3-bar w3-center">
+    <a href="javascript:prevPage()" id="btn_prev" class="w3-button w3-grey" >Prev</a>&nbsp;
+    <a href="javascript:nextPage()" id="btn_next" class="w3-button w3-grey">Next</a><br>
+
+    page: <span id="page"></span>
+</div>
+
+
+
+
