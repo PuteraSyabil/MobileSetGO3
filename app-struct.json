@@ -1,15 +1,30 @@
 {
     "root":{ 
-      "type":"linktree",
-      "framework":"w3css",
+      "type":"sidebar",
+      "framework":"bootstrap",
       "appName":"utmApp",
-      "backgroundColour":"teal",
+      "backgroundColour":"danger",
       "links":[
           {"caption":"Home Login","type":"login"},
-          {"caption":"About","type":"tabular","links":[
-            {"caption":"About Faculty"}
+          {"caption":"blank page no type"},
+          {"caption":"row button", "type":"row-button","links":[
+            {"caption":"row button 1"},
+            {"caption":"row button 2"}
           ]},
-          {"caption":"Photos","type":"list-paginate"},
+          {"caption":"About","type":"tabular","links":[
+            {"caption":"About Faculty"},
+            {"caption":"About School"},
+            {"caption":"About Research"},
+            {"caption":"About Lab"}
+          ]},
+          {"caption":"Musics","type":"list-paginate","links":[
+            {"caption":"Playlist 1"},
+            {"caption":"Playlist 2"}
+          ]},
+          {"caption":"Photos List","type":"list","links":[
+            {"caption":"Family Album"},
+            {"caption":"University Album"}
+          ]},
           {"caption":"Contact","type":"linktree","links":[
             {"caption":"Family","type":"login"},
             {"caption":"Friends","type":"login"}

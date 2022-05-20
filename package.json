@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "add-filename-increment": "^1.0.0",
     "cheerio": "^1.0.0-rc.10",
+    "filename-incrementer": "^2.0.2",
     "fs-extra": "^10.1.0"
   }
 }

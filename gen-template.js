@@ -1,6 +1,7 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const { exit } = require('process');
 const fg = require('./file-generator.js');
+const incr = require('filename-incrementer');
 
 let jsonText = fs.readFileSync('app-struct.json');
 let appStruct = JSON.parse(jsonText);
@@ -38,7 +39,13 @@ var app_config=new Config(appStruct.root.backgroundColour, appStruct.root.framew
 // create directory to save the generated pages
 var dir = './' + appStruct.root.appName;
 
-if (!fs.existsSync(dir)){
+if (fs.existsSync(dir)){
+   //allow user to remove/edit the json data by overwritting it
+    fs.removeSync(dir);
+
+    fs.mkdirSync(dir);
+}
+else{
     fs.mkdirSync(dir);
 }
 
@@ -123,6 +130,9 @@ function generateFile(struct, file_name, parent_page, app_config) {
 
     } else if (struct.type == "tabular") {
         fg.tabular(struct, file_name, parent_page, app_config);
+
+    } else if (struct.type=="row-button") {
+        fg.row_button(struct, file_name, parent_page, app_config);
 
     } else {
         fg.blank(struct, file_name, parent_page, app_config);
