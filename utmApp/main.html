@@ -1,5 +1,4 @@
-<html>
-    <head>
+<head>
         <title>main page</title>
 
         <meta charset="UTF-8">
@@ -16,20 +15,36 @@
         <script src="link.js"></script>
         <script src="https://kit.fontawesome.com/e67e81f5eb.js" crossorigin="anonymous"></script>
         
-      </head>
       <style>
         footer {margin-top: auto;}
         body{min-height: 100vh;display: flex;flex-direction: column;}
-      </style>
+      </style></head>
+      
 
       <body ng-app="myApp">
         
         <!-- nav and jumbotron -->
         <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar" name="navItem">
-            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-        </div>
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close ×</button>
+        
+				<a href="#/!" class="w3-bar-item w3-button w3-mobile" id="Home Login">Home Login</a>
 
-        <div class="" id="backgroundColItem">
+				<a href="#!blank_page_no_type" class="w3-bar-item w3-button w3-mobile" id="blank page no type">blank page no type Link</a>
+
+				<a href="#!row_button" class="w3-bar-item w3-button w3-mobile" id="row button">row button Link</a>
+
+				<a href="#!About" class="w3-bar-item w3-button w3-mobile" id="About">About Link</a>
+
+				<a href="#!Musics" class="w3-bar-item w3-button w3-mobile" id="Musics">Musics Link</a>
+
+				<a href="#!Photos_List" class="w3-bar-item w3-button w3-mobile" id="Photos List">Photos List Link</a>
+
+				<a href="#!Contact" class="w3-bar-item w3-button w3-mobile" id="Contact">Contact Link</a>
+
+				<a href="#!Info" class="w3-bar-item w3-button w3-mobile" id="Info">Info Link</a>
+</div>
+
+        <div class="w3-teal" id="backgroundColItem">
             <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
             <div class="w3-container">
                 <div class="jumbotron jumbotron-fluid" style="background:transparent !important">
@@ -43,8 +58,8 @@
         <!-- content -->
         <div class="ng-view">error recall function</div>
 
-      </body>
-      <footer class=""id="footerItem" >
+      
+      <footer class="w3-container w3-padding-32 w3-center w3-teal" id="footerItem">
         <h4>Footer</h4>
         <div class="w3-xlarge w3-section"></div>
       </footer>
@@ -52,4 +67,4 @@
 
 
       
-</html>
+</body>

@@ -7,7 +7,7 @@ const fg_sidebar = require('./sidebar-file-generator');
 const fg_tab = require('./tab-file-generator');
 const fg_list = require('./list-file-generator');
 const fg_list_paginate = require('./list-paginate-file-generator');
-const fg_back_button = require('./back-button-file-generator');
+const fg_subpage = require('./subpage-file-generator');
 const fg_row_button = require('./row-button-file-generator');
 
 
@@ -102,7 +102,7 @@ function genPageLinks(struct, file_name, parent_page, app_config, parent_head) {
         {
             //if the object has no type, then it will generate and blank page
             //fs.writeFileSync(app_dir + '/' + file_name, '<html><body>' + file_name + '</body></html>');
-             fg_back_button.generate(struct, file_name, parent_page, app_config, app_dir);
+             fg_subpage.generate(struct, file_name, parent_page, app_config, app_dir);
         }
        
 }

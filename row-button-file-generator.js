@@ -2,18 +2,17 @@
 const fs = require('fs-extra');
 const cheerio = require('cheerio');
 
-const fg_back_button = require('./back-button-file-generator');
+const fg_subpage = require('./subpage-file-generator');
 
 
 module.exports={
 
     generate: function(struct, file_name, parent_page, app_config, app_dir)
     {
-        console.log("test")
         fs.copyFileSync('layout_template/'+app_config.framework+'/'+struct.type+'/'+struct.type+'.html',app_dir + '/' + file_name);
          //to have a back button
-        fg_back_button.generate(struct, file_name, parent_page, app_config, app_dir);
-        writeLink(struct, file_name, parent_page, app_config, app_dir)
+        fg_subpage.generate(struct, file_name, parent_page, app_config, app_dir);
+        writeLink(struct, file_name, parent_page, app_config, app_dir);
     }
 }
 
