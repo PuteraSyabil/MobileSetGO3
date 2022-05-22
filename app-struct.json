@@ -1,9 +1,10 @@
 {
     "root":{ 
-      "type":"sidebar",
+      "type":"tab",
       "framework":"w3css",
       "appName":"utmApp",
       "backgroundColour":"teal",
+      "footer":{"caption":"copyright 2020"},
       "links":[
           {"caption":"Home Login","type":"login"},
           {"caption":"blank page no type"},

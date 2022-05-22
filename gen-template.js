@@ -1,39 +1,14 @@
 const fs = require('fs-extra');
 const { exit } = require('process');
 const fg = require('./file-generator.js');
-const incr = require('filename-incrementer');
-
+const Config = require('./Config.js');
 let jsonText = fs.readFileSync('app-struct.json');
 let appStruct = JSON.parse(jsonText);
-console.log(appStruct);
 console.log();
 
-//whole page study 
-//
-class Config
-{
-    constructor(backgroundColour, framework,type)
-    {
-        this.backgroundColour= backgroundColour;
-        this.framework=framework;
-        this.type=type
-    }
-    setType(type)
-    {
-        this.type=type;
-    }
-    setBackgroundColour(backgroundColour)
-    {
-        this.backgroundColour=backgroundColour;
-    }
-    setFramework(framework)
-    {
-        this.framework=framework;
-    }
-}
 
 //set root config
-var app_config=new Config(appStruct.root.backgroundColour, appStruct.root.framework,appStruct.root.type);
+var app_config=new Config(appStruct.root.backgroundColour, appStruct.root.framework,appStruct.root.type,appStruct.root.footer.caption);
 
 
 // create directory to save the generated pages
@@ -48,7 +23,7 @@ if (fs.existsSync(dir)){
 else{
     fs.mkdirSync(dir);
 }
-
+//to set working directory in file-generator.js
 fg.setAppDir(dir);
 
 
