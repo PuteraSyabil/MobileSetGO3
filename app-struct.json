@@ -1,6 +1,6 @@
 {
     "root":{ 
-      "type":"tab",
+      "type":"linktree",
       "framework":"w3css",
       "appName":"utmApp",
       "backgroundColour":"teal",
@@ -26,7 +26,7 @@
             {"caption":"Family Album"},
             {"caption":"University Album"}
           ]},
-          {"caption":"Contact","type":"linktree","links":[
+          {"caption":"Contact","type":"row-button","links":[
             {"caption":"Family","type":"login"},
             {"caption":"Friends","type":"login"}
           ]},

@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const { exit } = require('process');
 const fg = require('./file-generator.js');
-const Config = require('./Config.js');
+const Config = require('./config.js');
 let jsonText = fs.readFileSync('app-struct.json');
 let appStruct = JSON.parse(jsonText);
 console.log();

@@ -1,60 +1,88 @@
 <head>
-<!-- var -->
-<title>main page</title>
+        <title>main page</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<script src="link.js"></script>
-<script src="https://kit.fontawesome.com/e67e81f5eb.js" crossorigin="anonymous"></script>
-<style>
-html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
-.mySlides {display:none}
-.w3-tag, .fa {cursor:pointer}
-.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
-footer {margin-top: auto;}
-body{min-height: 100vh;display: flex;flex-direction: column;}
-</style>
-<title>undefined</title></head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <script src="link.js"></script>
+        <script src="https://kit.fontawesome.com/e67e81f5eb.js" crossorigin="anonymous"></script>
 
-<body ng-app="myApp">
-<div class="sticky-top">
-  <div class="w3-bar w3-teal" id="navItem">
-    <!-- var -->
+        <style>
+            .link-box{
+                border: 2px solid;
+                padding: 15px 0;
+                font-family: 'Lato';
+                font-size: 20px;
+                font-weight: 500;
+                color: blank;
+            }
+
+            .link-box:hover{
+                color: brown;
+                
+            }
+            a{
+                text-decoration: none;
+            }
+        </style>
+    <title>undefined</title></head>
+
+    <body style="min-height: 100vh;display: flex;flex-direction: column; background-position: center; font-family: 'Lato';">
+       
+       <!-- Jumbotron -->
+        <div class="w3-container w3-teal" id="backgroundColItem">
+            <div class="jumbotron jumbotron-fluid w3-center" style="background:transparent !important">
+                
+                    <div class="container">
+                        <br>
+                        <h1>Main Page</h1> 
+                    </div>            
+            </div>
+        </div>
+
+        <!-- Links Button -->
+        <div class="w3-container" style="text-align: center;" id="navItem">
+        	<a href="Home_Login.html">
+				<br>
+				<div class="link-box mt-3 w3-round-xxlarge"> Home Login link</div>
+				<br>
+			</a>	<a href="blank_page_no_type.html">
+				<br>
+				<div class="link-box mt-3 w3-round-xxlarge"> blank page no type link</div>
+				<br>
+			</a>	<a href="row_button.html">
+				<br>
+				<div class="link-box mt-3 w3-round-xxlarge"> row button link</div>
+				<br>
+			</a>	<a href="About.html">
+				<br>
+				<div class="link-box mt-3 w3-round-xxlarge"> About link</div>
+				<br>
+			</a>	<a href="Musics.html">
+				<br>
+				<div class="link-box mt-3 w3-round-xxlarge"> Musics link</div>
+				<br>
+			</a>	<a href="Photos_List.html">
+				<br>
+				<div class="link-box mt-3 w3-round-xxlarge"> Photos List link</div>
+				<br>
+			</a>	<a href="Contact.html">
+				<br>
+				<div class="link-box mt-3 w3-round-xxlarge"> Contact link</div>
+				<br>
+			</a>	<a href="Info.html">
+				<br>
+				<div class="link-box mt-3 w3-round-xxlarge"> Info link</div>
+				<br>
+			</a></div>
+        
     
-  
-		<a href="#/!" class="w3-bar-item w3-button w3-mobile" id="Home Login">Home Login</a>
-
-		<a href="#!blank_page_no_type" class="w3-bar-item w3-button w3-mobile" id="blank page no type">blank page no type Link</a>
-
-		<a href="#!row_button" class="w3-bar-item w3-button w3-mobile" id="row button">row button Link</a>
-
-		<a href="#!About" class="w3-bar-item w3-button w3-mobile" id="About">About Link</a>
-
-		<a href="#!Musics" class="w3-bar-item w3-button w3-mobile" id="Musics">Musics Link</a>
-
-		<a href="#!Photos_List" class="w3-bar-item w3-button w3-mobile" id="Photos List">Photos List Link</a>
-
-		<a href="#!Contact" class="w3-bar-item w3-button w3-mobile" id="Contact">Contact Link</a>
-
-		<a href="#!Info" class="w3-bar-item w3-button w3-mobile" id="Info">Info Link</a>
-</div>
-</div> 
-
-<!-- Content -->
-<div class="ng-view">error recall function</div>
-
-
-
-
-<footer class="w3-container w3-padding-32 w3-center w3-teal" id="footerItem">
-  <div class="w3-xlarge w3-section"></div>
-<h4>copyright 2020</h4></footer>
-
-
-</body><!-- Footer -->
+    <footer class="w3-container w3-padding-32 w3-center w3-teal" style="margin-top: auto;" id="footerItem">
+    <h4>copyright 2020</h4></footer>
+   
+</body>

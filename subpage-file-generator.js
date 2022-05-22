@@ -20,6 +20,7 @@ module.exports={
         //to change the header title to file name 
         fg_header.generate(struct, file_name, parent_page, app_config, app_dir)
     }
+    
 }
 
 function writeBackButtonTypeObject(struct, file_name, parent_page, app_config, app_dir)
