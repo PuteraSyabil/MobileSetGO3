@@ -1,9 +1,9 @@
 {
     "root":{ 
       "type":"linktree",
-      "framework":"w3css",
+      "framework":"bootstrap",
       "appName":"utmApp",
-      "backgroundColour":"teal",
+      "backgroundColour":"danger",
       "footer":{"caption":"copyright 2020"},
       "links":[
           {"caption":"Home Login","type":"login"},

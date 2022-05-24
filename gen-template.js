@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const { exit } = require('process');
 const fg = require('./file-generator.js');
 const Config = require('./config.js');
+const menu_ui = require('./ui-main-menu');
 let jsonText = fs.readFileSync('app-struct.json');
 let appStruct = JSON.parse(jsonText);
 console.log();
@@ -35,6 +36,7 @@ fg.setAppDir(dir);
         exit(0);
     }
     else{
+        menu_ui.mainMenuTitle();
         // starting point of recursive function calls
         traverseStruct(appStruct.root, null);
     }
