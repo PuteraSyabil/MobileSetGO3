@@ -11,7 +11,7 @@ module.exports={
         //to write the subpage back button
         if(struct.type)
         {
-            
+    
             writeBackButtonTypeObject(struct, file_name, parent_page, app_config, app_dir)
         }
         else{

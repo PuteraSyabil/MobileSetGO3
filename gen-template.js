@@ -2,45 +2,51 @@ const fs = require('fs-extra');
 const { exit } = require('process');
 const fg = require('./file-generator.js');
 const Config = require('./config.js');
-const menu_ui = require('./ui-main-menu');
+
+
 let jsonText = fs.readFileSync('app-struct.json');
 let appStruct = JSON.parse(jsonText);
 console.log();
-
-
 //set root config
 var app_config=new Config(appStruct.root.backgroundColour, appStruct.root.framework,appStruct.root.type,appStruct.root.footer.caption);
 
 
-// create directory to save the generated pages
-var dir = './' + appStruct.root.appName;
-
-if (fs.existsSync(dir)){
-   //allow user to remove/edit the json data by overwritting it
-    fs.removeSync(dir);
-
-    fs.mkdirSync(dir);
-}
-else{
-    fs.mkdirSync(dir);
-}
-//to set working directory in file-generator.js
-fg.setAppDir(dir);
 
 
-// starting point of recursive function calls
+module.exports={
+    run:function(){
+        // create directory to save the generated pages
+        var dir = './' + appStruct.root.appName;
 
-    if(!(appStruct.root.type == "tabular"||appStruct.root.type == "linktree"||appStruct.root.type == "tab"||appStruct.root.type == "sidebar"))
-    {
-        console.log("root type is not main page")
-        exit(0);
-    }
-    else{
-        menu_ui.mainMenuTitle();
+        if (fs.existsSync(dir)){
+        //allow user to remove/edit the json data by overwritting it
+            fs.removeSync(dir);
+
+            fs.mkdirSync(dir);
+        }
+        else{
+            fs.mkdirSync(dir);
+        }
+        //to set working directory in file-generator.js
+        fg.setAppDir(dir);
+
+
         // starting point of recursive function calls
-        traverseStruct(appStruct.root, null);
+
+        if(!(appStruct.root.type == "tabular"||appStruct.root.type == "linktree"||appStruct.root.type == "tab"||appStruct.root.type == "sidebar"))
+        {
+            console.log("root type is not main page")
+            exit(0);
+        }
+        else{
+            // starting point of recursive function calls
+            traverseStruct(appStruct.root, null);
+        }
+
+
     }
 
+}
 
 // Recursive function to traverse page structure
 function traverseStruct(struct, parent_page) {
