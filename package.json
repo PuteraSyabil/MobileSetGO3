@@ -5,6 +5,7 @@
     "clear": "^0.1.0",
     "figlet": "^1.5.2",
     "filename-incrementer": "^2.0.2",
-    "fs-extra": "^10.1.0"
+    "fs-extra": "^10.1.0",
+    "pretty": "^2.0.0"
   }
 }

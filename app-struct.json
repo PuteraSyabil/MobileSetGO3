@@ -1,12 +1,13 @@
 {
     "root":{ 
       "type":"linktree",
-      "framework":"bootstrap",
-      "appName":"utmApp",
+      "framework":"w3css",
+      "appName":"testing app",
       "backgroundColour":"danger",
-      "footer":{"caption":"copyright 2020"},
+      "footer":"copyright 2020",
       "links":[
           {"caption":"Home Login","type":"login"},
+          {"caption":"Home Log","type":"log"},
           {"caption":"blank page no type"},
           {"caption":"row button", "type":"row-button","links":[
             {"caption":"row button 1"},

@@ -34,7 +34,8 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
             
             if(app_config.framework=="w3css")
             {
-                tempLi='<a href="'+linkName+'.html" style="text-decoration:none;"><li class="w3-padding-large"><span class="w3-large">'+struct.links[i].caption+'</li></a>\n'
+                tempLi='<a href="'+linkName+'.html" style="text-decoration:none;"><li class="w3-padding-large"><span class="w3-large">'+struct.links[i].caption+'</li></a>\n';
+                
             }
             else
             {

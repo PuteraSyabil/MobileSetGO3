@@ -142,6 +142,10 @@ function genNavPageLinks(struct, file_name, parent_page, app_config, app_dir)
     {
         fg_row_button.generate(struct, file_name, parent_page, app_config, app_dir);
     }
+    else
+    {
+        fg_subpage.generate(struct, file_name, parent_page, app_config, app_dir);
+    }
     
     
     

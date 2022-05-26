@@ -8,7 +8,7 @@ let jsonText = fs.readFileSync('app-struct.json');
 let appStruct = JSON.parse(jsonText);
 console.log();
 //set root config
-var app_config=new Config(appStruct.root.backgroundColour, appStruct.root.framework,appStruct.root.type,appStruct.root.footer.caption);
+var app_config=new Config(appStruct.root.backgroundColour, appStruct.root.framework,appStruct.root.type,appStruct.root.footer);
 
 
 
@@ -39,6 +39,16 @@ module.exports={
             exit(0);
         }
         else{
+            console.log("The root of the application is set with: ");
+            console.log("Application name of: "+appStruct.root.appName);
+            console.log("Framework of: "+ appStruct.root.framework);
+            console.log("Main Menu type of: "+ appStruct.root.type);
+            console.log("Background Colour of: "+ appStruct.root.backgroundColour);
+            console.log("Footer caption of: "+appStruct.root.footer);
+            console.log();
+            console.log("Now generating of the pages...");
+            console.log();
+            console.log();
             // starting point of recursive function calls
             traverseStruct(appStruct.root, null);
         }

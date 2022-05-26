@@ -59,7 +59,22 @@ function writeBackButtonTypeObject(struct, file_name, parent_page, app_config, a
                     //to append content web
                     var content=fs.readFileSync('layout_template/'+app_config.framework+'/'+struct.type+'/'+struct.type+'.html');
                     fs.appendFileSync(app_dir + '/' + file_name,content);
+
+                    
                 }
+                else{
+                    // to add blank page if the page has unidentified type for SPA
+                    try{
+                        var content=fs.readFileSync('layout_template/'+app_config.framework+'/'+struct.type+'/'+struct.type+'.html');
+                    }
+                    catch
+                    {
+                        //to append if the type if indentified
+                        console.log("Page type unidentified, blank page will be generated.");
+                        fs.appendFileSync(app_dir + '/' + file_name,file_name);
+                    }
+                }
+                
             }
             else
             {
@@ -94,8 +109,16 @@ function writeBackButtonTypeObject(struct, file_name, parent_page, app_config, a
                     fs.writeFileSync(app_dir + '/' + file_name,colSubPageHTML,'utf8');
                     
                     //to append the content of the sublink page
-                    var content=fs.readFileSync('layout_template/'+app_config.framework+'/'+struct.type+'/'+struct.type+'.html');
-                    fs.appendFileSync(app_dir + '/' + file_name,content);
+                    try{
+                        var content=fs.readFileSync('layout_template/'+app_config.framework+'/'+struct.type+'/'+struct.type+'.html');
+                        fs.appendFileSync(app_dir + '/' + file_name,content);
+                    }
+                    catch
+                    {
+                        //to append page if the page type is unidentified for MPA
+                        console.log("Page type unidentified, blank page will be generated.");
+                        fs.appendFileSync(app_dir + '/' + file_name,file_name);
+                    }
                 }
             }  
         }
