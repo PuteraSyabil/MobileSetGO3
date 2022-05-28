@@ -32,23 +32,18 @@ module.exports={
 
 
         // starting point of recursive function calls
-
         if(!(appStruct.root.type == "tabular"||appStruct.root.type == "linktree"||appStruct.root.type == "tab"||appStruct.root.type == "sidebar"))
         {
             console.log("root type is not main page")
             exit(0);
         }
+        if(!(appStruct.root.framework=="w3css"||appStruct.root.framework=="bootstrap"))
+        {
+            console.log("root framework is not defined")
+            exit(0);
+        }
         else{
-            console.log("The root of the application is set with: ");
-            console.log("Application name of: "+appStruct.root.appName);
-            console.log("Framework of: "+ appStruct.root.framework);
-            console.log("Main Menu type of: "+ appStruct.root.type);
-            console.log("Background Colour of: "+ appStruct.root.backgroundColour);
-            console.log("Footer caption of: "+appStruct.root.footer);
-            console.log();
-            console.log("Now generating of the pages...");
-            console.log();
-            console.log();
+            displayConfig();
             // starting point of recursive function calls
             traverseStruct(appStruct.root, null);
         }
@@ -130,4 +125,18 @@ function generateFile(struct, file_name, parent_page, app_config) {
     } else {
         fg.blank(struct, file_name, parent_page, app_config);
     }
+}
+
+function displayConfig()
+{
+            console.log("The root of the application is set with: ");
+            console.log("Application name of: "+appStruct.root.appName);
+            console.log("Framework of: "+ appStruct.root.framework);
+            console.log("Main Menu type of: "+ appStruct.root.type);
+            console.log("Background Colour of: "+ appStruct.root.backgroundColour);
+            console.log("Footer caption of: "+appStruct.root.footer);
+            console.log();
+            console.log("Now generating of the pages...");
+            console.log();
+            console.log();
 }

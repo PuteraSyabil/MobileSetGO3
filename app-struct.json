@@ -1,10 +1,11 @@
 {
     "root":{ 
-      "type":"linktree",
-      "framework":"w3css",
+      "type":"row-button",
+      "framework":"",
       "appName":"testing app",
       "backgroundColour":"danger",
       "footer":"copyright 2020",
+      
       "links":[
           {"caption":"Home Login","type":"login"},
           {"caption":"Home Log","type":"log"},

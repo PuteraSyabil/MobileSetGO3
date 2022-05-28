@@ -5,7 +5,7 @@ const menu_ui = require('./ui-main-menu');
 
 const run  =async()=>{
     //to add title of the project
-    menu_ui.mainMenuTitle();
+    menu_ui.displayMainMenuTitle();
     gen_template.run();
 }
 

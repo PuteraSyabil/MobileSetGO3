@@ -56,7 +56,6 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
                 }
             }
             
-        
             $('#navItem').append(linkText).html();
             navHTML=$("*").html();
             fs.writeFileSync(app_dir + '/' + file_name,navHTML,'utf8');

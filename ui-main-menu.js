@@ -2,7 +2,7 @@ const figlet = require('figlet')
 
 module.exports = {
 
-    mainMenuTitle: () =>
+    displayMainMenuTitle: () =>
       console.log(`${
         
           figlet.textSync(' MobileSetGO ', {

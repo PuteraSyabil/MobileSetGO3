@@ -1,12 +1,12 @@
 class Config
 {
-    constructor(backgroundColour, framework,type,footer,header)
+    constructor(backgroundColour, framework,type,footer)
     {
         this.backgroundColour= backgroundColour;
         this.framework=framework;
         this.type=type;
         this.footer=footer;
-        this.header=header;
+
     }
     setType(type)
     {
@@ -24,10 +24,7 @@ class Config
     {
         this.footer= footer;
     }
-    setHeader(header)
-    {
-        this.header=header;
-    }
+   
 }
 
 module.exports=Config;
