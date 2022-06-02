@@ -94,6 +94,7 @@ function genPageLinks(struct, file_name, parent_page, app_config, parent_head) {
          console.log("Generate " + file_name + " page.");
     }
     
+    
         if(struct.type)
         {
             genNavPageLinks(struct, file_name, parent_page, app_config,app_dir);

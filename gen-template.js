@@ -12,7 +12,6 @@ var app_config=new Config(appStruct.root.backgroundColour, appStruct.root.framew
 
 
 
-
 module.exports={
     run:function(){
         // create directory to save the generated pages
@@ -93,6 +92,11 @@ function traverseStruct(struct, parent_page) {
             }
             
         }
+    }
+    //curent page ended as item list
+    if(struct.items)
+    {
+        
     }
 }
 

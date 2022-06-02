@@ -50,9 +50,38 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
              i++
         }
     }
+    else if(struct.items)
+    {
+        while(i<struct.items.length)
+        {
+            //to write the link caption button of list
+            captionText = struct.items[i].caption;
+            linkName = struct.items[i].caption;
+            linkName =linkName.replace(/\s/g, '_');
+
+            
+            if(app_config.framework=="w3css")
+            {
+                tempLi='<li class="w3-padding-large"><span class="w3-large">'+struct.items[i].caption+'</li>\n';
+                
+            }
+            else
+            {
+                tempLi='<li class="list-group-item"><h5>'+struct.items[i].caption+'</h5></li>\n'
+            }
+
+            //to append cheerio object to the file
+            $("#contentListPaginate").append(tempLi).html();
+            listHTML=$("*").html();
+            fs.writeFileSync(app_dir + '/' + file_name,listHTML,'utf8');
+
+            
+             i++
+        }
+    }
     else
     {
-        console.log("List item does not have any links")
+        console.log("List item does not have any links or items")
     }
     
 }
