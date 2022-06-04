@@ -2,6 +2,7 @@
 const fs = require('fs-extra');
 const cheerio = require('cheerio');
 const pretty = require('pretty');
+const { exit } = require('process');
 
 const fg_subpage = require('./subpage-file-generator');
 const fg_footer = require('./footer-file-generator');
@@ -23,6 +24,7 @@ module.exports={
 
 function writeLink(struct, file_name, parent_page, app_config, app_dir)
 {
+    
     const $ = cheerio.load(fs.readFileSync(app_dir + '/' + file_name,'utf8'));
     
     var captionText="";
@@ -39,6 +41,7 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
     {
         while(i<struct.links.length)
         {
+            
             //To write the link button of linktree using cheerio
             captionText = struct.links[i].caption;
             linkName = struct.links[i].caption;
@@ -57,18 +60,8 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
                 // // div('div').text(struct.links[i].caption);
                 // h4('h4').text(captionText);
                 // //a('a').text(captionText);
-                
-                // div('div').append(h4('h4'));
-                
+                // div('div').append(h4('h4'));             
                 // a('a').append(div('div'))
-                
-                
-               
-                
-                
-               
-
-
             }
             else
             {

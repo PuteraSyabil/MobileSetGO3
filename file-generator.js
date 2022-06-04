@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const cheerio = require('cheerio');
+const { exit } = require('process');
 const fg_login = require('./login-file-generator');
 const fg_linktree = require('./linktree-file-generator');
 const fg_tabular = require('./tabular-file-generator');
@@ -83,6 +84,13 @@ function genPageLinks(struct, file_name, parent_page, app_config, parent_head) {
     if (struct.links) {
         console.log("Generate " + file_name + " page that contains links:");
         for (var idx in struct.links) {
+            //to exit the program incase the captio is not there
+            if(!struct.links[idx].caption)
+            {
+                console.log();
+                console.log("A subpage has no caption program will terminate");
+                exit(0);
+            }
             let file_name_link = struct.links[idx].caption + ".html";
 
             // formatting the file name so "hello world.html" becomes "hello_world.html"
@@ -101,8 +109,7 @@ function genPageLinks(struct, file_name, parent_page, app_config, parent_head) {
         }
         else
         {
-            //if the object has no type, then it will generate and blank page
-            //fs.writeFileSync(app_dir + '/' + file_name, '<html><body>' + file_name + '</body></html>');
+            
              fg_subpage.generate(struct, file_name, parent_page, app_config, app_dir);
         }
        
@@ -147,8 +154,6 @@ function genNavPageLinks(struct, file_name, parent_page, app_config, app_dir)
     {
         fg_subpage.generate(struct, file_name, parent_page, app_config, app_dir);
     }
-    
-    
     
     
 }

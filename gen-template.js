@@ -31,7 +31,7 @@ module.exports={
 
 
         // starting point of recursive function calls
-        if(!(appStruct.root.type == "tabular"||appStruct.root.type == "linktree"||appStruct.root.type == "tab"||appStruct.root.type == "sidebar"))
+        if(!(appStruct.root.type == "linktree"||appStruct.root.type == "tab"||appStruct.root.type == "sidebar"))
         {
             console.log("root type is not main page")
             exit(0);
@@ -58,7 +58,7 @@ function traverseStruct(struct, parent_page) {
     var file_name = undefined;
 
     file_name = struct.caption + ".html";
-    if (appStruct.root.type == "tabular"||struct.type == "linktree"||struct.type == "tab"||struct.type == "sidebar") {
+    if (struct.type == "linktree"||struct.type == "tab"||struct.type == "sidebar") {
         if(parent_page==null)
         {
             file_name = "main.html";
@@ -77,26 +77,25 @@ function traverseStruct(struct, parent_page) {
    
         for (var idx in struct.links) {
             // each node is actually other sub-page structure
-            console.log("Traverse sub page structure: " + struct.links[idx].caption);
             
-            //restriction on if theres any SPA object not root, it will terminate the generation
-            if(struct.links[idx].type=="tab"||struct.links[idx].type=="sidebar")
-            {
-                console.log("Object "+struct.links[idx].type+" is a Single Page Application! For root only!")
-                exit(0);
-            }
-            else
-            {
-                // recursive call to "traverseStruct" function
-                traverseStruct(struct.links[idx], file_name );
-            }
+            
+                console.log("Traverse sub page structure: " + struct.links[idx].caption);
+            
+                //restriction on if theres any SPA object not root, it will terminate the generation
+                if(struct.links[idx].type=="tab"||struct.links[idx].type=="sidebar")
+                {
+                    console.log("Object "+struct.links[idx].type+" is a Single Page Application! For root only!")
+                    exit(0);
+                }
+                else
+                {
+                    // recursive call to "traverseStruct" function
+                    traverseStruct(struct.links[idx], file_name );
+                }
+            
+            
             
         }
-    }
-    //curent page ended as item list
-    if(struct.items)
-    {
-        
     }
 }
 

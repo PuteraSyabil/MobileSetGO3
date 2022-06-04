@@ -28,6 +28,8 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
     {
         while(i<struct.links.length)
         {
+            
+            
             //To write the link button of linktree using cheerio
             captionText = struct.links[i].caption;
             linkName = struct.links[i].caption;

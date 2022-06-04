@@ -2,34 +2,24 @@
     "root":{ 
       "type":"linktree",
       "framework":"bootstrap",
-      "appName":"application 2",
+      "appName":"Testing Application",
       "backgroundColour":"teal",
-      "footer":"testing footer caption",
+      "footer":"Testing footer caption",
       "links":[
-          {"caption":"Home Login","type":"login"},
-          {"caption":"Testing application type not in the library","type":"log"},
-          {"caption":"blank page no type"},
-          {"caption":"row button", "type":"row-button","links":[
-            {"caption":"row button 1"},
-            {"caption":"row button 2"}
+          {"caption":"Login","type":"row-button","links":[
+            {"caption":"User Login","type":"login"},
+            {"caption":"Staff Login","type":"login"}
           ]},
-          {"caption":"About","type":"tabular","links":[
-            {"caption":"About Faculty"},
-            {"caption":"About School"},
-            {"caption":"About Research"},
-            {"caption":"About Lab"}
-          ]},
-          {"caption":"Musics","type":"list-paginate","items":[
+
+          {"caption":"Musics","type":"list-paginate","links":[
             {"caption":"Playlist 1"},
             {"caption":"Playlist 2"}
+            
           ]},
-          {"caption":"Photos List","type":"list","links":[
+          {"caption":"Photos List","type":"list","items":[
             {"caption":"Family Album"},
-            {"caption":"University Album"}
-          ]},
-          {"caption":"Contact","type":"row-button","links":[
-            {"caption":"Family","type":"login"},
-            {"caption":"Friends","type":"login"}
+            {"caption":"University Album"},
+            {}
           ]},
           {"caption":"Info","type":"tabular", "links":[
             {"caption":"News","icon":"fa-solid fa-font-awesome"},
@@ -38,7 +28,8 @@
             {"caption":"Survey","icon":"fas fa-poll","type":"tabular","links":[
               {"caption":"Campus Live","icon":"fa-solid fa-school"},
               {"caption":"Cafeteria","icon":"fa-solid fa-coffee"},
-              {"caption":"Teaching and Learning", "icon":"fas fa-chalkboard-teacher"}
+              {"caption":"Teaching and Learning"}
+              
             ]}
           ]}
         ]

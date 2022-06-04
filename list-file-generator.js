@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const cheerio = require('cheerio');
+const { exit } = require('process');
 const fg_subpage = require('./subpage-file-generator');
 
 module.exports={
@@ -26,6 +27,7 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
     {
         while(i<struct.links.length)
         {
+            
             //to write the link caption button of list
             captionText = struct.links[i].caption;
             linkName = struct.links[i].caption;
@@ -54,6 +56,13 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
     {
         while(i<struct.items.length)
         {
+            //To end the program if subpage has no caption
+            if(!struct.items[i].caption)
+            {
+                console.log();
+                console.log("A subpage has no caption program will terminate");
+                exit(0);
+            }
             //to write the link caption button of list
             captionText = struct.items[i].caption;
             linkName = struct.items[i].caption;
