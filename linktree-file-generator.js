@@ -3,12 +3,9 @@ const fs = require('fs-extra');
 const cheerio = require('cheerio');
 const pretty = require('pretty');
 const { exit } = require('process');
-
 const fg_subpage = require('./subpage-file-generator');
 const fg_footer = require('./footer-file-generator');
 const link = require('fs-extra/lib/ensure/link');
-
-
 module.exports={
 
     generate: function(struct, file_name, parent_page, app_config, app_dir)
@@ -20,8 +17,6 @@ module.exports={
         fg_footer.generate(struct, file_name, parent_page, app_config, app_dir)
     }
 }
-
-
 function writeLink(struct, file_name, parent_page, app_config, app_dir)
 {
     
@@ -32,11 +27,6 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
     var linkName="";
     var newCol="";
     var i = 0;
-
-    // let a = cheerio.load('<a></a>');
-    // let div = cheerio.load('<div></div>');
-    // let h4 = cheerio.load('<h4></h4>');
-    // div('div').addClass('link-box mt-3 w3-round-xxlarge');
     if(struct.links)
     {
         while(i<struct.links.length)
@@ -55,13 +45,6 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
                 '\n\t\t\t\t<div class="link-box mt-3 w3-round-xxlarge"> '+captionText +' link</div>'+
                 '\n\t\t\t\t<br>'+
                 '\n\t\t\t</a>';
-
-                // a('a').attr('href',linkName+'.html');
-                // // div('div').text(struct.links[i].caption);
-                // h4('h4').text(captionText);
-                // //a('a').text(captionText);
-                // div('div').append(h4('h4'));             
-                // a('a').append(div('div'))
             }
             else
             {
@@ -71,11 +54,6 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
                 '\n\t\t\t\t<br>'+
                 '\n\t\t\t</a>';
             }
-
-
-            
-        
-            // linkText=a.html()
             $('#navItem').append(linkText).html();
             navHTML=$("*").html();
             fs.writeFileSync(app_dir + '/' + file_name,pretty($.html()),'utf8');

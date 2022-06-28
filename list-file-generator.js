@@ -80,7 +80,7 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
             }
 
             //to append cheerio object to the file
-            $("#contentListPaginate").append(tempLi).html();
+            $("#contentList").append(tempLi).html();
             listHTML=$("*").html();
             fs.writeFileSync(app_dir + '/' + file_name,listHTML,'utf8');
 

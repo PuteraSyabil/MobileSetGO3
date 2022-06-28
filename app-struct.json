@@ -1,8 +1,8 @@
 {
     "root":{ 
       "type":"linktree",
-      "framework":"bootstrap",
-      "appName":"Testing Application",
+      "framework":"w3css",
+      "appName":"Luqman Jalal Portal",
       "backgroundColour":"teal",
       "footer":"Testing footer caption",
       "links":[
@@ -11,27 +11,13 @@
             {"caption":"Staff Login","type":"login"}
           ]},
 
-          {"caption":"Musics","type":"list-paginate","links":[
-            {"caption":"Playlist 1"},
-            {"caption":"Playlist 2"}
+          {"caption":"List Paginate Subject","type":"list","items":[
+            {"caption":"Page 1"},
+            {"caption":"Page 2"},
+            {"caption":"Page 3"}
             
-          ]},
-          {"caption":"Photos List","type":"list","items":[
-            {"caption":"Family Album"},
-            {"caption":"University Album"},
-            {}
-          ]},
-          {"caption":"Info","type":"tabular", "links":[
-            {"caption":"News","icon":"fa-solid fa-font-awesome"},
-            {"caption":"School Fees","icon":"fas fa-money-check"},
-            {"caption":"College Fees","icon":"fas fa-money-check"},
-            {"caption":"Survey","icon":"fas fa-poll","type":"tabular","links":[
-              {"caption":"Campus Live","icon":"fa-solid fa-school"},
-              {"caption":"Cafeteria","icon":"fa-solid fa-coffee"},
-              {"caption":"Teaching and Learning"}
-              
-            ]}
           ]}
+
         ]
       
     }
