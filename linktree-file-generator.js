@@ -42,7 +42,7 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
             {
                 linkText='\t<a href="'+linkName+'.html">'+
                 '\n\t\t\t\t<br>'+
-                '\n\t\t\t\t<div class="link-box mt-3 w3-round-xxlarge"> '+captionText +' link</div>'+
+                '\n\t\t\t\t<div class="link-box mt-3 w3-round-xxlarge"> '+captionText +'</div>'+
                 '\n\t\t\t\t<br>'+
                 '\n\t\t\t</a>';
             }
@@ -50,7 +50,7 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
             {
                 linkText='\t<a href="'+linkName+'.html">'+
                 '\n\t\t\t\t<br>'+
-                '\n\t\t\t\t<div class="link-box mt-3 img-rounded"> '+captionText +' link</div>'+
+                '\n\t\t\t\t<div class="link-box mt-3 img-rounded"> '+captionText +'</div>'+
                 '\n\t\t\t\t<br>'+
                 '\n\t\t\t</a>';
             }

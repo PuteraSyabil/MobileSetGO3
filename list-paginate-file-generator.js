@@ -36,12 +36,12 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
             
             if(app_config.framework=="w3css")
             {
-                tempLi='<a href="'+linkName+'.html" style="text-decoration:none;"><li class="w3-padding-large"><span class="w3-large">'+struct.links[i].caption+'</li></a>\n';
+                tempLi='\n\t\t<a href="'+linkName+'.html" style="text-decoration:none;"><li class="w3-padding-large"><span class="w3-large">'+struct.links[i].caption+'</li></a>\n';
                 
             }
             else
             {
-                tempLi='<a href="'+linkName+'.html" style="text-decoration:none;"><li class="list-group-item"><h5>'+struct.links[i].caption+'</h5></li></a>\n'
+                tempLi='\n\t\t<a href="'+linkName+'.html" style="text-decoration:none;"><li class="list-group-item"><h5>'+struct.links[i].caption+'</h5></li></a>\n'
             }
 
             //to append cheerio object to the file
@@ -72,12 +72,12 @@ function writeLink(struct, file_name, parent_page, app_config, app_dir)
             
             if(app_config.framework=="w3css")
             {
-                tempLi='<li class="w3-padding-large"><span class="w3-large">'+struct.items[i].caption+'</li>\n';
+                tempLi='\n\t\t<li class="w3-padding-large"><span class="w3-large">'+struct.items[i].caption+'</li>\n';
                 
             }
             else
             {
-                tempLi='<li class="list-group-item"><h5>'+struct.items[i].caption+'</h5></li>\n'
+                tempLi='\n\t\t<li class="list-group-item"><h5>'+struct.items[i].caption+'</h5></li>\n'
             }
 
             //to append cheerio object to the file

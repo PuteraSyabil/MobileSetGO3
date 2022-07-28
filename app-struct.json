@@ -1,19 +1,28 @@
 {
     "root":{ 
-      "framework":"w3css",
-      "appName":"test",
+      "framework":"bootstrap",
+      "appName":"test case 3",
       "type":"linktree",
-      "backgroundColour":"black",
-      "footer":"copyright demo application 2022",
+      "backgroundColour":"primary",
+      "footer":"footer test case 3",
       "links":[
-        {"caption":"Parent Page 1", "type":"login"},
-        {"caption":"Parent Page 2","type":"tabular", "links":[
-          {"caption":"Child Page 1","icon":"fa-solid fa-school"},
-          {"caption":"Child Page 2"}
+        {"caption":"tabular parent","type":"tabular","links":[
+          {"caption":"tabular child 1","icon":"fa-solid fa-school"},
+          {"caption":"tabular child 2","type":"login"},
+          {"caption":"tabular child 3"}
+          
         ]},
-        {"caption":"Parent Page 3","type":"list", "items":[
-          {"caption":"Child Page 3"},
-          {"caption":"Child Page 4"}
+        {"caption":"list parent","type":"list","links":[
+          {"caption":"list child 1"}
+        ]},
+        {"caption":"list-paginate parent","type":"list-paginate","items":[
+          {"caption":"list-paginate child 1"}
+          
+        ]},
+        {"caption":"row-button parent","type":"row-button","links":[
+          {"caption":"row-button child","type":"row-button","links":[
+            {"caption":"row-button grandchild"}
+          ]}
         ]}
       ]
     }
